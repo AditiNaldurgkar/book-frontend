@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import axios from "axios"
-import { data } from 'react-router-dom';
+import axios from "axios";
+import Button from '../../components/Button/Button';
 
 function Home() {
     const [Books,setBooks] = useState([""])
@@ -24,6 +24,7 @@ function Home() {
             ) : (
                 <p>No books available or loading...</p>
             )}
+        <Button/>
         </div>
     </div>
     
