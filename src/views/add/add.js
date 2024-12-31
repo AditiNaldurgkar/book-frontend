@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Button from '../../components/Button/Button'
 import axios from 'axios'
+import  toast ,{ Toaster }from 'react-hot-toast' 
 
 function Add() {
     const [name,Setname]=useState("")
@@ -22,6 +23,7 @@ function Add() {
             console.log(response)
             Setname("")
             Setprice("")
+            toast.success("added")
         }
     catch(error){
         console.log(error)
@@ -31,6 +33,7 @@ function Add() {
             </button>
 
     </div>
+    <Toaster/>
     </div>
   )
 }
