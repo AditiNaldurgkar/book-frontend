@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import Button from '../../components/Button/Button';
+import BookCard from '../../components/Bookcard/bookcard';
 
 function Home() {
     const [Books,setBooks] = useState([""])
@@ -16,12 +17,10 @@ function Home() {
          <div>
             <h1>Home</h1>
             {Books.length > 0 ? (
-                <ul>
-                    {Books.map((book, index) => (
-                        <li key={index}>{book.name}</li>
-                    ))}
-                </ul>
-            ) : (
+          Books.map((book, index) => (
+            <BookCard key={index} name={book.name} price={book.price} />
+          ))
+        )  : (
                 <p>No books available or loading...</p>
             )}
         <Button/>
