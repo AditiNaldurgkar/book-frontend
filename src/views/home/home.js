@@ -18,10 +18,10 @@ function Home() {
             <h1>Home</h1>
             {Books.length > 0 ? (
           Books.map((book, index) => (
-            <BookCard key={index} name={book.name} price={book.price} />
+            <BookCard key={index} bookkey ={index} name={book.name} price={book.price} />
           ))
         )  : (
-                <p>No books available or loading...</p>
+                <p>No books available</p>
             )}
         <Button/>
         </div>

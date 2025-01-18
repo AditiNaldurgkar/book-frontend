@@ -1,0 +1,13 @@
+.bookcard{
+    background-color: blue;
+    width: 700px;
+    margin : 20px auto;
+    padding:  10px 20px;
+    border-radius: 5px;
+    text-decoration: none !important;
+    color: black;
+
+}
+.span{
+    text-decoration: none !important;
+}
