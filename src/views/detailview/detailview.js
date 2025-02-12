@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import Update from '../update/update';
 
 function loaddetail(name) {
   return axios.get(`http://localhost:5000/books/${name}`);
@@ -38,9 +39,14 @@ function Detailview() {
       <h1>Detail View</h1>
       <span>Name: {name}</span>
         <p>{bookDetails.data.price}</p> 
+        <Link to={`/update/${name}`}>
+        <button >Update</button>
+        </Link>
+        
      
     </div>
   );
 }
+
 
 export default Detailview;

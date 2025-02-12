@@ -6,8 +6,12 @@
     border-radius: 5px;
     text-decoration: none !important;
     color: black;
+    position: relative;
 
 }
-.span{
-    text-decoration: none !important;
+
+.delbtn{
+right: 15px;
+position: absolute;
+cursor: pointer;
 }
