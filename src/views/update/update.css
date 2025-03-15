@@ -1,0 +1,39 @@
+h2{
+    text-align: center;
+    font-size: 35px;
+    color: #690B22;
+}
+.homeimg{
+    height: 50px;
+    position:fixed;
+    top:30px;
+    display: inline;
+    margin-bottom: 0px;
+    right:20px;
+    cursor: pointer;
+}
+.info{
+    margin: 20px;
+    font-size: large;
+    margin-left: 34%;
+}
+.inp{
+    background-color: #F1E3D3;
+    box-shadow: 2px 2px 2px 2px grey;
+    padding: 5px;
+    width: 200px;
+}
+.btn-s{
+    display: block;
+    margin: 10px auto;
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: none;
+    background-color: #1B4D3E;
+    color:white;
+    cursor: pointer;
+    width: 150px;}
+.btn-s:hover{
+    background-color: whitesmoke;
+    color: black;
+}

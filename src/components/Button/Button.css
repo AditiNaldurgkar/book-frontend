@@ -1,8 +1,16 @@
 .btn{
-    width: 100px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    padding: 8px 20px;
+    border-radius: 6px;
     border: none;
+    background-color: #1B4D3E;
+    color:white;
+    cursor: pointer;
+    width: 100px;
 
+}
+.btn:hover{
+    background-color: whitesmoke;
+    color: black;
 }

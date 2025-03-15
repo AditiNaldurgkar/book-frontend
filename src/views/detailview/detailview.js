@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Update from '../update/update';
+import "./detail.css"
+import home from "./../../components/home (2).png"
 
 function loaddetail(name) {
   return axios.get(`http://localhost:5000/books/${name}`);
@@ -17,6 +19,7 @@ function Detailview() {
       try {
         const response = await loaddetail(name);
         setBookDetails(response.data); 
+        console.log(response.data)
       } catch (err) {
         console.error(err); 
         setError('Failed to fetch book details.'); 
@@ -36,11 +39,18 @@ function Detailview() {
 
   return (
     <div>
-      <h1>Detail View</h1>
-      <span>Name: {name}</span>
-        <p>{bookDetails.data.price}</p> 
+       <Link to={"/"}> <img className='homeimg' src={home}></img></Link>
+      <h1 className='heading-d'>Detail View</h1>
+      <div className='maindiv'>
+      <span className='span'>Name: {name}</span><br/>
+      <span className='span'>Price: </span>
+        <span>{bookDetails.data.price}</span> <br/>
+        <span className='span'>About the book :</span>
+        <span>{bookDetails.data.description}</span>
+        </div>
+        <img src={bookDetails.data.imglink} className='bookimg'/>
         <Link to={`/update/${name}`}>
-        <button >Update</button>
+        <button className='btn-update'>Update Price</button>
         </Link>
         
      

@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom'
 function Add() {
     const [name,Setname]=useState("")
     const [price,Setprice]=useState("")
+    const [imglink,Setlink]=useState("")
+    const [desp,Setdesp]=useState("")
   return (
     <div> 
         <Link to={"/"}> <img className='homeimg' src={home}></img></Link>
@@ -20,16 +22,22 @@ function Add() {
         <input id='name' onChange={(e)=>{Setname(e.target.value)}} value={name}>
         </input><br/>
         <label htmlFor='price' > Price of book :</label>
-        <input id='price' onChange={(e)=>{Setprice(e.target.value)}} value={price}></input>
+        <input id='price' onChange={(e)=>{Setprice(e.target.value)}} value={price}></input><br/>
+        <label htmlFor='price' > Description:</label>
+        <input id='price' onChange={(e)=>{Setdesp(e.target.value)}} value={desp}></input><br/>
+        <label htmlFor='price' > Image link :</label>
+        <input id='price' onChange={(e)=>{Setlink(e.target.value)}} value={imglink}></input><br/>
         <button className='btn-add' onClick={
             async ()=>{
                 try{
             const response = await axios.post("http://localhost:5000/books",{
-                name:name,price:price
+                name:name,price:price,imglink:imglink,description:desp
             })
             console.log(response)
             Setname("")
             Setprice("")
+            Setlink("")
+            Setdesp("")
             toast.success("Book added successfully")
         }
     catch(error){
