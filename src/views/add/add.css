@@ -1,0 +1,43 @@
+.headingadd{
+    text-align: center;
+    font-size: 30px;
+    display: block;
+    margin: 10px;
+}
+.form{
+    background-color : #F1E3D3;
+    display: block;
+    margin: 10px auto ;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 4px grey;
+    padding: 20px;
+    padding-left: 70px;
+}
+input{
+    margin: 5px;
+    margin-bottom: 20px;
+    height: 20px;
+    border-radius: 4px;
+    padding: 4px;
+    width: 50%;
+    border: none;
+}
+input:hover{
+    box-shadow: 2px 2px 2px 2px grey ;
+}
+img{
+    height: 300px;
+    display: block;
+    margin: 10px auto;
+}
+.btn-add{
+    display: block;
+    margin: 10px auto;
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: none;
+    background-color: #1B4D3E;
+    color:white;
+
+}

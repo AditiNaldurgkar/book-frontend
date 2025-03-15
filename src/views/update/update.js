@@ -4,44 +4,45 @@ import { useParams } from 'react-router-dom';
 
 function Update() {
   const { name: paramName } = useParams(); 
-  const [name, setName] = useState(paramName || ""); 
   const [price, setPrice] = useState(""); 
 
   useEffect(() => {
     axios.get(`http://localhost:5000/books/${paramName}`)
       .then(response => {
-        setName(response.data.name);
         setPrice(response.data.price);
       })
       .catch(error => console.error(error));
-  }, [paramName]); 
+  }, [paramName]);
+
   const updateDetail = async () => {
     try {
-      await axios.post(`http://localhost:5000/books/${name}`,{name,price});
+      console.log("Updating book:", paramName, price);
+      await axios.put(`http://localhost:5000/books/${paramName}`, { price });
       alert("Book details updated successfully!");
     } catch (error) {
       console.error(error);
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    updateDetail();
+  };
+
   return (
     <div>
-      <form>
-        <label>Enter book name:</label>
-        <input 
-          id="name" 
-          value={name} 
-          onChange={(e) => setName(e.target.value)}
-        />
-        <br />
+      <h2>Update Book</h2>
+      <p>Book Name: {paramName}</p> 
+      <form onSubmit={handleSubmit}>
         <label>Enter book price:</label>
         <input 
           id="price" 
           value={price} 
           onChange={(e) => setPrice(e.target.value)}
         />
+        <br />
+        <button type="submit">Submit</button>
       </form>
-      <button onClick={updateDetail}>Submit</button>
     </div>
   );
 }
