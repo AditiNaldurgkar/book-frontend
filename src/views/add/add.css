@@ -26,10 +26,20 @@ input{
 input:hover{
     box-shadow: 2px 2px 2px 2px grey ;
 }
-img{
+.homeimg{
+    height: 50px;
+    position:fixed;
+    top:30px;
+    display: inline;
+    margin-bottom: 0px;
+    right:20px;
+    cursor: pointer;
+}
+.img{
     height: 300px;
     display: block;
     margin: 10px auto;
+    margin-top: 0px;
 }
 .btn-add{
     display: block;
@@ -39,5 +49,10 @@ img{
     border: none;
     background-color: #1B4D3E;
     color:white;
+    cursor: pointer;
 
+}
+.btn-add:hover{
+    background-color: whitesmoke;
+    color: black;
 }

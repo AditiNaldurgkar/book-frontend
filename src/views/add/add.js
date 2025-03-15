@@ -4,12 +4,15 @@ import axios from 'axios'
 import  toast ,{ Toaster }from 'react-hot-toast' 
 import "./add.css"
 import img1 from "./../../components/Reading glasses-rafiki.png"
+import home from "./../../components/home (2).png"
+import { Link } from 'react-router-dom'
 
 function Add() {
     const [name,Setname]=useState("")
     const [price,Setprice]=useState("")
   return (
     <div> 
+        <Link to={"/"}> <img className='homeimg' src={home}></img></Link>
         <img className='img'
         src={img1}></img><span className='headingadd'>Add Book </span>
     <div className='form'>
