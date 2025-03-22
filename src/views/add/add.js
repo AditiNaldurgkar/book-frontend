@@ -30,7 +30,7 @@ function Add() {
         <button className='btn-add' onClick={
             async ()=>{
                 try{
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/books`,{
+            const response = await axios.post(`${process.env.REACT_APP_API}/books`,{
                 name:name,price:price,imglink:imglink,description:desp
             })
             console.log(response)
