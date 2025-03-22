@@ -30,7 +30,7 @@ function Add() {
         <button className='btn-add' onClick={
             async ()=>{
                 try{
-            const response = await axios.post("http://localhost:5000/books",{
+            const response = await axios.post("https://book-backend-rlyf.onrender.com/books",{
                 name:name,price:price,imglink:imglink,description:desp
             })
             console.log(response)

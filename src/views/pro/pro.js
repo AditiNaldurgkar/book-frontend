@@ -9,8 +9,6 @@ const ImageUploader = () => {
       const file = e.target.files[0];
       if (file) {
         setImage(file);
-  
-        // Create preview URL
         const reader = new FileReader();
         reader.onloadend = () => {
           setPreview(reader.result);
@@ -28,7 +26,7 @@ const ImageUploader = () => {
       const formData = new FormData();
       formData.append("image", image);
   
-      fetch("http://localhost:5000/upload", {
+      fetch("https://book-backend-rlyf.onrender.com/upload", {
         method: "POST",
         body: formData,
       })

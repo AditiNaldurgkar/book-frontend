@@ -10,7 +10,7 @@ function Home() {
         loadbooks(); 
     }, []);
     const loadbooks=async ()=>{ 
-        const response = await axios.get("http://localhost:5000/books") 
+        const response = await axios.get("https://book-backend-rlyf.onrender.com/books") 
         setBooks(response.data)
     }
   return (

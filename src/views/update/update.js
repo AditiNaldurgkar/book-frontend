@@ -11,7 +11,7 @@ function Update() {
   const [price, setPrice] = useState(""); 
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/books/${paramName}`)
+    axios.get(`https://book-backend-rlyf.onrender.com/books/${paramName}`)
       .then(response => {
         setPrice(response.data.price);
       })
@@ -21,7 +21,7 @@ function Update() {
   const updateDetail = async () => {
     try {
       console.log("Updating book:", paramName, price);
-      await axios.put(`http://localhost:5000/books/${paramName}`, { price });
+      await axios.put(`https://book-backend-rlyf.onrender.com/books/${paramName}`, { price });
       toast.success("Book details updated successfully!");
     } catch (error) {
       console.error(error);
