@@ -6,7 +6,7 @@ import "./detail.css"
 import home from "./../../components/home (2).png"
 
 function loaddetail(name) {
-  return axios.get(`https://book-backend-rlyf.onrender.com/books/${name}`);
+  return axios.get(`${process.env.REACT_APP_API_URL}/books/${name}`);
 }
 
 function Detailview() {
