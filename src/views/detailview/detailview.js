@@ -46,7 +46,7 @@ function Detailview() {
       <span className='span'>Price: </span>
         <span>{bookDetails.data.price}</span> <br/>
         <span className='span'>About the book :</span>
-        <span>{bookDetails.data.description}</span>
+        <span className='desp'>{bookDetails.data.description}</span>
         </div>
         <img src={bookDetails.data.imglink} className='bookimg'/>
         <Link to={`/update/${name}`}>

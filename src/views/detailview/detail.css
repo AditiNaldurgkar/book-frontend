@@ -18,8 +18,9 @@
         color: black;
     }
 .span{
-    font-size: large;
+    font-size: medium;
     margin: 20px;
+    margin-right: 4px;
 }
 .homeimg{
     height: 50px;
@@ -43,4 +44,10 @@
     width: 900px;
     padding: 10px;
    
+
+}
+.desp{
+    margin-left: 0px;
+    align-items: left;
+    font-size: medium;
 }
