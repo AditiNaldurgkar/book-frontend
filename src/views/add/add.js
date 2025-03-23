@@ -27,10 +27,10 @@ function Add() {
         <input id='price' onChange={(e)=>{Setdesp(e.target.value)}} value={desp}></input><br/>
         <label htmlFor='price' > Image link :</label>
         <input id='price' onChange={(e)=>{Setlink(e.target.value)}} value={imglink}></input><br/>
-        <button className='btn-add' onClick={
+        <button className='btn-add' onClick={ 
             async ()=>{
                 try{
-            const response = await axios.post(`${process.env.REACT_APP_API}/books`,{
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/books`,{
                 name:name,price:price,imglink:imglink,description:desp
             })
             console.log(response)

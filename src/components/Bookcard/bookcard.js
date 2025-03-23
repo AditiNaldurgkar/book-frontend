@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 const deletebtn = async (name) => {
   try {
-    await axios.delete(`https://book-backend-rlyf.onrender.com/books/${name}`);
-    window.location.reload(); 
+    const encodedName = encodeURIComponent(name); // Encode before sending
+    await axios.delete(`${process.env.REACT_APP_API_URL}/books/${encodedName}`);
+    window.location.reload();
   } catch (error) {
-    console.error("Error deleting book:", error);
+    console.error("Error deleting book:", error.response?.data || error.message);
   }
 };
+
 
 function BookCard({name,price}) {
 
@@ -18,6 +20,7 @@ function BookCard({name,price}) {
     <div className='bookcard'> 
     <span>{name}</span>
     <button className='delbtn'onClick={(e)=>{
+       e.preventDefault();
       e.stopPropagation();
       deletebtn(name);
     }}>Delete</button>
