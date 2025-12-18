@@ -5,7 +5,7 @@ import BookCard from '../../components/Bookcard/bookcard';
 import "./home.css"
 import homemain from "./../../components/Bookshop-cuate.png"
 function Home() {
-    const [Books,setBooks] = useState([""])
+    const [Books,setBooks] = useState([])
     useEffect(() => {
         loadbooks(); 
     }, []);
@@ -17,13 +17,13 @@ function Home() {
     <div>
          <div>
             <img src={homemain} className='img'></img>
-            <h1 className='homehead'>Home</h1>
+            <h1 className='homehead'>Welcome to the world of Books!!</h1>
             {Books.length > 0 ? (
           Books.map((book, index) => (
             <BookCard key={index} bookkey ={index} name={book.name} price={book.price} />
           ))
         )  : (
-                <p>No books available</p>
+                <p className='errormsg'>Oops!No books available</p>
             )}
         <Button/>
         </div>

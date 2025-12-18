@@ -1,57 +1,68 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useParams, Link } from 'react-router-dom'
 import "./update.css"
 import home from "./../../components/home (2).png"
-import { Link } from 'react-router-dom';
-import toast,{Toaster} from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast'
 
 function Update() {
-  const { name: paramName } = useParams(); 
-  const [price, setPrice] = useState(""); 
+  const { name: paramName } = useParams()
+  const [price, setPrice] = useState("")
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/books/${paramName}`)
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/books/${encodeURIComponent(paramName)}`)
       .then(response => {
-        setPrice(response.data.price);
+        setPrice(response.data.data.price)   // 🔴 FIX
       })
-      .catch(error => console.error(error));
-  }, [paramName]);
+      .catch(error => {
+        console.error(error)
+        toast.error("Failed to load book details")
+      })
+  }, [paramName])
 
   const updateDetail = async () => {
     try {
-      console.log("Updating book:", paramName, price);
-      await axios.put(`${process.env.REACT_APP_API_URL}/books/${paramName}`, { price });
-      toast.success("Book details updated successfully!");
+      await axios.put(
+        `${process.env.REACT_APP_API_URL}/books/${encodeURIComponent(paramName)}`,
+        { price: Number(price) }   // 🔴 FIX
+      )
+      toast.success("Book price updated successfully!")
     } catch (error) {
-      console.error(error);
+      console.error(error)
+      toast.error("Update failed")
     }
-  };
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
-    updateDetail();
-  };
+    e.preventDefault()
+    updateDetail()
+  }
 
   return (
     <div>
-       <Link to={"/"}> <img className='homeimg' src={home}></img></Link>
+      <Link to={"/"}>
+        <img className='homeimg' src={home} alt="home" />
+      </Link>
+
       <h2>Update Book Price</h2>
-      <p className='info'>Book Name: {paramName}</p> 
+      <p className='info'>Book Name: {paramName}</p>
+
       <form onSubmit={handleSubmit}>
         <label className='info'>Enter book price:</label>
-        <input  className='inp'
-          id="price" 
-          value={price} 
-          onChange={(e) => setPrice(e.target.value)
-          }
+        <input
+          className='inp'
+          type="number"
+          value={price}
+          onChange={e => setPrice(e.target.value)}
         />
         <br />
         <button type="submit" className='btn-s'>Submit</button>
       </form>
-      <Toaster/>
+
+      <Toaster />
     </div>
-  );
+  )
 }
 
-export default Update;
+export default Update
