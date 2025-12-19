@@ -27,7 +27,10 @@ function Home() {
             )}
         <Button/>
         <div className='quote'>
-          किताबें हमारी सबसे अच्छी दोस्त होती हैं, वो न शिकायत करती हैं न मांग करती हैं... बस साथ देती हैं
+          <span>A room without books is like a body without a soul." — Cicero</span><br/>
+Our mission is to connect souls with stories. Whether you are looking
+ for a hidden gem or want to champion a classic, this is your space to explore 
+ and exchange book recommendations.
         </div>
         </div>
     </div>

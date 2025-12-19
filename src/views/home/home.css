@@ -10,3 +10,14 @@
     }
 .errormsg{
     text-align: center;}
+.quote{
+    text-align: center;
+margin-top: 20px;
+background-color: #F3CF7A;
+width: 600px;
+padding: 10px;
+border-radius: 3px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
