@@ -26,6 +26,9 @@ function Home() {
                 <p className='errormsg'>Oops!No books available</p>
             )}
         <Button/>
+        <div className='quote'>
+          किताबें हमारी सबसे अच्छी दोस्त होती हैं, वो न शिकायत करती हैं न मांग करती हैं... बस साथ देती हैं
+        </div>
         </div>
     </div>
     

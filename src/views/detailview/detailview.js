@@ -41,12 +41,13 @@ function Detailview() {
     <div>
        <Link to={"/"}> <img className='homeimg' src={home}></img></Link>
       <h1 className='heading-d'>Detail View</h1>
+      <span className='spany'>Know more about the book here!!</span>
+      <br/>
       <div className='maindiv'>
-      <span className='span'>Name: {name}</span><br/>
-      <span className='span'>Price: </span>
-        <span>{bookDetails.data.price}</span> <br/>
-        <span className='span'>About the book :</span>
-        <span className='desp'>{bookDetails.data.description}</span>
+      <span className='namebook'> {name}</span><br/><br/>
+      <span className='pricebook'>₹{bookDetails.data.price}</span>
+        <br/><br/>
+        <div className='abt'>About the book :<br/> {bookDetails.data.description}<br/> </div>
         </div>
         <img src={bookDetails.data.imglink} className='bookimg'/>
         <Link to={`/update/${name}`}>
