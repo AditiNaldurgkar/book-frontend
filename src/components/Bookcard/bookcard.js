@@ -13,12 +13,14 @@ const deletebtn = async (name) => {
 };
 
 
-function BookCard({name,price}) {
+function BookCard({name,price,author}) {
 
   return (
     <Link to={`/detail/${name}`} style={{textDecoration: 'none'}}> 
     <div className='bookcard'> 
-    <span>{name}</span>
+    <span className='bookname'>{name}</span>
+    <br/>
+    <span className='authorname'>{author}</span>
     <button className='delbtn'onClick={(e)=>{
        e.preventDefault();
       e.stopPropagation();

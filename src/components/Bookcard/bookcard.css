@@ -8,11 +8,14 @@
     color: black;
     position: relative;
     padding-bottom: 14px;
+    height:max-content
 
 }
 
 .delbtn{
-right: 15px;
+top:50%;
+right:5px;
+transform: translateY(-50%);
 position: absolute;
 cursor: pointer;
 border: none;
@@ -20,4 +23,13 @@ padding: 5px 10px;
 border-radius: 4px;
 background-color: #690B22;
 color: white;
+}
+.bookname{
+    font-size: 20px;
+    font-weight: 600;
+}
+.authorname{
+    font-size: 16px;
+    margin: 2px;
+    color: #555555;
 }

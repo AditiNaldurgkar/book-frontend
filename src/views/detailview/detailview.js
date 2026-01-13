@@ -45,6 +45,7 @@ function Detailview() {
       <br/>
       <div className='maindiv'>
       <span className='namebook'> {name}</span><br/><br/>
+       <span className='authorbook'> {bookDetails.data.author} hey</span><br/><br/>
       <span className='pricebook'>₹{bookDetails.data.price}</span>
         <br/><br/>
         <div className='abt'>About the book :<br/> {bookDetails.data.description}<br/> </div>

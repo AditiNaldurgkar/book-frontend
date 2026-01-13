@@ -11,7 +11,7 @@ function Add() {
   const [price, setPrice] = useState("")
   const [imglink, setLink] = useState("")
   const [desp, setDesp] = useState("")
-
+  const [author, setAuthor] = useState("")
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
@@ -20,9 +20,10 @@ function Add() {
           name: name,
           price: Number(price),   
           imglink: imglink,
-          description: desp
+          description: desp,
+          author: author 
         }
-      )
+      ) 
 
       console.log(response.data)
 
@@ -30,6 +31,7 @@ function Add() {
       setPrice("")
       setLink("")
       setDesp("")
+      setAuthor("")
 
       toast.success("Book added successfully")
     } catch (error) {
@@ -54,6 +56,13 @@ function Add() {
           type="text"
           value={name}
           onChange={e => setName(e.target.value)}
+        />
+        <br/>
+        <label>Name of Author :</label>
+         <input
+          type="text"
+          value={author}
+          onChange={e => setAuthor(e.target.value)}
         />
         <br/>
         <label>Price of book :</label>
