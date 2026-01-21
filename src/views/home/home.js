@@ -4,11 +4,12 @@ import Button from '../../components/Button/Button';
 import BookCard from '../../components/Bookcard/bookcard';
 import "./home.css";
 import homemain from "./../../components/Bookshop-cuate.png";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [books, setBooks] = useState([]);
   const [search, setSearch] = useState("");
-
+  const navigate = useNavigate();
   useEffect(() => {
     loadbooks();
   }, []);
@@ -43,11 +44,19 @@ function Home() {
 
     return [...matched, ...unmatched];
   };
+  const handleLogout = async () => {
+  await axios.post(`${process.env.REACT_APP_API_URL}/logout`);
+
+  localStorage.removeItem("user"); 
+  navigate("/"); 
+};
+
 
   return (
     <div>
       <img src={homemain} className="img" alt="home" />
       <h1 className="homehead">Welcome to the world of Books!!</h1>
+      <button onClick={handleLogout}>Logout</button>
       <input
         className="searchbar"
         type="text"
