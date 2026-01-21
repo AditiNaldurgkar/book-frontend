@@ -5,12 +5,12 @@ import Home from "./views/home/home";
 import Add from "./views/add/add";
 import Detailview from "./views/detailview/detailview";
 import Update from "./views/update/update";
-import login from "./views/login/login";
+import SignupLogin from "./views/login/login";
 
 const root =createRoot(document.getElementById("root"));
 const router=createBrowserRouter([{
     path:'/',
-    element:<Home/>
+    element:<SignupLogin/>
 
 },{
     path:'/add',
@@ -23,7 +23,7 @@ const router=createBrowserRouter([{
     element:<Update/>
 },
 {
-    path:'/login',
-    element:<login/>
+    path:'/Home',
+    element:<Home/>
 }])
 root.render(<RouterProvider router={router}></RouterProvider>);
