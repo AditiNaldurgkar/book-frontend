@@ -13,7 +13,7 @@ function Update() {
     axios
       .get(`${process.env.REACT_APP_API_URL}/books/${encodeURIComponent(paramName)}`)
       .then(response => {
-        setPrice(response.data.data.price)   // 🔴 FIX
+        setPrice(response.data.data.price)  
       })
       .catch(error => {
         console.error(error)
@@ -25,7 +25,7 @@ function Update() {
     try {
       await axios.put(
         `${process.env.REACT_APP_API_URL}/books/${encodeURIComponent(paramName)}`,
-        { price: Number(price) }   // 🔴 FIX
+        { price: Number(price) }  
       )
       toast.success("Book price updated successfully!")
     } catch (error) {
@@ -41,7 +41,7 @@ function Update() {
 
   return (
     <div>
-      <Link to={"/"}>
+      <Link to={"/Home"}>
         <img className='homeimg' src={home} alt="home" />
       </Link>
 

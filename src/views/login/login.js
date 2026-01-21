@@ -3,6 +3,7 @@ import axios from "axios";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 import backimg from "../login/bgimg.jpg";
+import {Toaster,toast} from "react-hot-toast";
 
 function SignupLogin() {
   const [name, setName] = useState("");
@@ -17,11 +18,11 @@ function SignupLogin() {
         { name, email, password }
       );
 
-      alert(res.data.msg);
+      toast.success(res.data.msg);
       navigate("/Home");
 
     } catch (err) {
-      alert(err.response?.data?.msg || "Signup failed");
+      toast.error(err.response?.data?.msg || "Signup failed");
     }
   };
 
@@ -32,11 +33,11 @@ function SignupLogin() {
         { name, password }
       );
 
-      alert(res.data.msg);
+      toast.success(res.data.msg);
       navigate("/Home");
 
     } catch (err) {
-      alert(err.response?.data?.msg || "Login failed");
+      toast.error(err.response?.data?.msg || "Login failed");
     }
   };
 

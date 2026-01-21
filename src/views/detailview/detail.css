@@ -87,3 +87,11 @@ width:max-content
     border-radius: 5px;
     margin-left: 20px;
 }
+.authorbook{
+  font-style: italic;
+    font-weight:800;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    margin-left: 20px;
+    margin-bottom: 5px;;
+}
