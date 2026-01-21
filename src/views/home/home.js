@@ -5,6 +5,7 @@ import BookCard from '../../components/Bookcard/bookcard';
 import "./home.css";
 import homemain from "./../../components/Bookshop-cuate.png";
 import { useNavigate } from "react-router-dom";
+import signout from "./logout.png"
 
 function Home() {
   const [books, setBooks] = useState([]);
@@ -56,7 +57,9 @@ function Home() {
     <div>
       <img src={homemain} className="img" alt="home" />
       <h1 className="homehead">Welcome to the world of Books!!</h1>
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={handleLogout} >
+        <img src={signout} alt="Logout" className='signout'/>
+      </button>
       <input
         className="searchbar"
         type="text"
