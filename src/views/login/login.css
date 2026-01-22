@@ -45,6 +45,7 @@
     font-style: italic;
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: beige;
+    margin: 0px;
 }
 .maincontainer{
     background-image: url('../login/bgimg.jpg');

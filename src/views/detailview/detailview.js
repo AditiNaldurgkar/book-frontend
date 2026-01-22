@@ -43,6 +43,7 @@ function Detailview() {
       <h1 className='heading-d'>Detail View</h1>
       <span className='spany'>Know more about the book here!!</span>
       <br/>
+      <div className="detail-container">
       <div className='maindiv'>
       <span className='namebook'> {name}</span><br/><br/>
        <span className='authorbook'> {bookDetails.data.author}</span><br/><br/>
@@ -51,6 +52,7 @@ function Detailview() {
         <div className='abt'>About the book :<br/> {bookDetails.data.description}<br/> </div>
         </div>
         <img src={bookDetails.data.imglink} className='bookimg'/>
+        </div>
         <Link to={`/update/${name}`}>
         <button className='btn-update'>Update Price</button>
         </Link>

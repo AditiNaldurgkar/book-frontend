@@ -42,3 +42,82 @@ margin-right: auto;
     cursor: pointer;
     width: 30px;
 }
+@media (max-width: 480px) {
+  .img {
+    width: 180px;
+  }
+
+  .homehead {
+    font-size: 20px;
+    padding: 0 15px;
+  }
+
+  .searchbar {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .quote {
+    font-size: 13px;
+    padding: 15px;
+  }
+
+  .signout {
+    width: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .img {
+    width: 220px;
+  }
+
+  .homehead {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .searchbar {
+    width: 75%;
+    padding: 10px;
+  }
+
+  .quote {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  button {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .img {
+    width: 280px;
+    margin-top: 30px;
+  }
+
+  .homehead {
+    font-size: 28px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .searchbar {
+    width: 60%;
+    font-size: 16px;
+  }
+
+  .quote {
+    font-size: 15px;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .signout {
+    width: 28px;
+  }
+}

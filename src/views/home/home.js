@@ -57,9 +57,9 @@ function Home() {
     <div>
       <img src={homemain} className="img" alt="home" />
       <h1 className="homehead">Welcome to the world of Books!!</h1>
-      <button onClick={handleLogout} >
-        <img src={signout} alt="Logout" className='signout'/>
-      </button>
+      
+        <img  onClick={handleLogout} src={signout} alt="Logout" className='signout'/>
+      
       <input
         className="searchbar"
         type="text"
