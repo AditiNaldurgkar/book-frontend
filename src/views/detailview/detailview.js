@@ -53,9 +53,12 @@ function Detailview() {
         </div>
         <img src={bookDetails.data.imglink} className='bookimg'/>
         </div>
-        <Link to={`/update/${name}`}>
-        <button className='btn-update'>Update Price</button>
-        </Link>
+       {localStorage.getItem("role") === "admin" && (
+  <Link to={`/update/${name}`}>
+    <button className="btn-update">Update Price</button>
+  </Link>
+)}
+
         
      
     </div>

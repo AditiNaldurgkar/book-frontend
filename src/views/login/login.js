@@ -35,6 +35,9 @@ function SignupLogin() {
 
       toast.success(res.data.msg);
       navigate("/Home");
+      localStorage.setItem("name", res.data.user.name);
+localStorage.setItem("role", res.data.user.role);
+
 
     } catch (err) {
       toast.error(err.response?.data?.msg || "Login failed");

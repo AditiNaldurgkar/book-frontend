@@ -23,10 +23,10 @@ function Update() {
 
   const updateDetail = async () => {
     try {
-      await axios.put(
-        `${process.env.REACT_APP_API_URL}/books/${encodeURIComponent(paramName)}`,
-        { price: Number(price) }  
-      )
+      axios.put(`/books/${name}`, {
+  price: newPrice,
+  role: localStorage.getItem("role")
+});
       toast.success("Book price updated successfully!")
     } catch (error) {
       console.error(error)
